@@ -1,0 +1,12 @@
+﻿@typeparam T
+<h3>ComponentWithChildFragment</h3>
+
+@ChildContent?.Invoke((default(T), "x"))
+
+@code {
+	[Parameter]
+	public (T x, string y) Param1 { get; set; }
+
+	[Parameter]
+	public RenderFragment<(T a, string b)>? ChildContent { get; set; }
+}
